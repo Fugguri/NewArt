@@ -1,0 +1,30 @@
+
+{% extends 'base.html' %}
+{% block style %} 
+.gallery-container{
+    padding-top: 25px;
+    display:flex; 
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    position: relative;
+  }
+  }{% endblock%}
+{%block title %} {{ block.super }}|Gallery{% endblock%}
+{%block context %} 
+<p class="desc">
+  Hello, welcome to my art gallery.<br />
+</p>
+<div class="gallery-container">
+
+  {%for item in paints %}
+  <div class="gallery-item">
+    <a href='{{item.get_absolute_url}}'>
+    <img src="{{item.photo.url}}"
+      alt="{{item.title}}"
+    /></a>
+  </div>
+  {% endfor %}
+</div>
+</section>
+{% endblock %}

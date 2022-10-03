@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    <style>{%block style %}  {% endblock %}</style>
+    <link rel="stylesheet" href="{% static 'css/style.css'%}" />
+    <script src="{% static 'js/script.js' %}"></script>
+    <title>{%block title %}My gallery {% endblock %}</title>
+  </head>
+  <body>
+    <section>
+      {%include 'include/_header.html'%}
+      {%include 'include/_navbar.html'%}
+        {%block context %}
+        context
+        {% endblock %}
+    {%include 'include/_footer.html'%}
+  </body>
+</html>

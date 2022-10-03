@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{%block title %} {{ block.super }}|Gallery{% endblock%}
+{%block context %} 
+<p class="desc">
+  Hello, welcome to my art gallery.<br />
+</p>
+<div class="gallery-container">
+
+
+  {%for item in paints %}
+  <div class="gallery-item">
+    <a href='{{item.get_absolute_url}}'>
+    <img src="{{item.photo.url}}"
+      alt="{{item.title}}"
+    /></a>
+  </div>
+  {% endfor %}
+</div>
+</section>
+{% endblock %}
+
+
+{% comment %} {%block title %}{{title}}{%endblock%}
+
+{%block content%}
+{%for item in paints%}
+<div class="card" style="width: 18rem;">
+  <img src="{{item.photo}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Название:{{item.title}}</h5>
+    <p class="card-text">{{item.description|linebreaks|truncatewords:30}}</p>
+    <p class="card-price">Цена:{{item.price}} Руб.</p>
+    <p class="card-instock">В наличии:{{item.in_stock}}</p>
+    <p class="card-year">Год:{{item.year}}</p>
+    <p class="card-materials">Материалы:{{item.material}}</p>
+    <p class="card-collection">Коллекция:{{item.collection}}</p>
+    <a href="{{article.get_absolut_url}}" class="btn btn-primary">{{item.title}}</a>
+  </div>
+</div>
+{%endfor%}
+{% endblock %}
+</body>
+</html> {% endcomment %}
