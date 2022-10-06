@@ -27,17 +27,7 @@ class HomePaint(ListView):
 class PaintView(ListView):
     model = Paint
     template_name = 'paints/details.html'
-    context_object_name = 'paint'
-    # extra_context = {'title': 'Главная'}
 
-    def get_context_data(self, *, object_list=None, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['title'] = 'Главная страница'
-        return context
-
-    # def get_queryset(self):
-    #     return Paint.objects.filter(is_published=True)
-    
     @property
     def photo_url(self):
         if self.photo and hasattr(self.photo, 'url'):
