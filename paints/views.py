@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, get_list_or_404,redirect
+from django.shortcuts import render, get_object_or_404, get_list_or_404, redirect
 from .models import Paint, Collection, Year, Material, Orientation
 from django.views.generic import ListView, DetailView, CreateView
 from django.core.paginator import Paginator
@@ -20,11 +20,8 @@ class HomePaint(ListView):
     def photo_url(self):
         if self.photo and hasattr(self.photo, 'url'):
             return self.photo.url
-        
 
 
-    
-    
 class PaintView(DetailView):
     model = Paint
     template_name = 'paints/details.html'
@@ -51,7 +48,7 @@ class ShopPaint(ListView):
     def photo_url(self):
         if self.photo and hasattr(self.photo, 'url'):
             return self.photo.url
-        
+
     # def get_queryset(self):
     #     return Paint.objects.filter(is_published=True)
 
@@ -74,3 +71,10 @@ class PaintCollection(ListView):
 
     def get_queryset(self):
         return Paint.objects.filter(collection_id=self.kwargs['pk'])
+
+
+class In_Interior(ListView):
+    model = Paint
+    template_name = 'paints/in_interior.html'
+    context_object_name = 'paints'
+    extra_context = {'title': 'В интерьере'}

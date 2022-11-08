@@ -1,6 +1,7 @@
 from django.db import models
 from django.urls import reverse
 
+
 class Collection(models.Model):
     title = models.CharField("Коллекция", max_length=150)
 
@@ -47,16 +48,21 @@ class Orientation(models.Model):
 
 class Paint(models.Model):
     title = models.CharField("Название", max_length=100)
-    photo = models.ImageField(upload_to='media/img/photo/%Y/%m/%d/', verbose_name="Фото", blank=True)
+    photo = models.ImageField(
+        upload_to='media/img/photo/%Y/%m/%d/', verbose_name="Фото", blank=True)
     description = models.TextField("Описание", blank=True)
     price = models.FloatField("Цена", blank=True)
     pub_date = models.DateTimeField("Дата публикации", auto_now=True)
     in_stock = models.BooleanField(default=True, verbose_name="В наличии ")
-    year = models.ForeignKey(Year, on_delete=models.PROTECT, null=True, verbose_name="Год")
-    materials = models.ForeignKey(Material, on_delete=models.PROTECT, null=True, verbose_name="Материал")
-    collection = models.ForeignKey(Collection, on_delete=models.PROTECT, null=True, verbose_name="Коллекция")
+    year = models.ForeignKey(
+        Year, on_delete=models.PROTECT, null=True, verbose_name="Год")
+    materials = models.ForeignKey(
+        Material, on_delete=models.PROTECT, null=True, verbose_name="Материал")
+    collection = models.ForeignKey(
+        Collection, on_delete=models.PROTECT, null=True, verbose_name="Коллекция")
     author_repeat = models.BooleanField("Авторский повтор", default=False)
-    orientation = models.ForeignKey(Orientation, on_delete=models.PROTECT, null=True, verbose_name="Ориентация")
+    orientation = models.ForeignKey(
+        Orientation, on_delete=models.PROTECT, null=True, verbose_name="Ориентация")
 
     def get_absolute_url(self):
         return reverse('paint', kwargs={'pk': self.pk})

@@ -1,0 +1,10 @@
+{
+    "editor.stickyTabStops": true,
+    "[makefile]": {
+        "editor.insertSpaces": true
+    },
+    "[go]": {
+        "editor.insertSpaces": true
+    },
+    "editor.formatOnSave": true
+}

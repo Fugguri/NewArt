@@ -9,5 +9,6 @@ urlpatterns = [
     path('gallery/<int:pk>', PaintCollection.as_view(), name='gallery'),
     path('shop', ShopPaint.as_view(), name='shop'),
     path('paint/<int:pk>/', PaintView.as_view(), name='paint'),
-    path('about', About.as_view(), name='about_me')
+    path('about', About.as_view(), name='about_me'),
+    path('in_interior', In_Interior.as_view(), name='in_interior')
 ]
