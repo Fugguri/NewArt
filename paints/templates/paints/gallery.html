@@ -1,20 +1,19 @@
 {% extends 'base.html' %}
+{% load watermark %}
 {% block title %} {{ block.super }}|Gallery{% endblock %}
 {% block context %}
-    <div class="gallery-container">
-        {% for item in paints %}
-            <div class="gallery-item">
-                <a href='{{ item.get_absolute_url }}'>
-                    <img src="{{ item.photo.url }}"
-                         alt="{{ item.title }}"
-                         style="-moz-user-select: none;
-                         -webkit-user-select: none;
-                         -ms-user-select: none;
-                         user-select: none;">
-                </a>
-            </div>
-        {% endfor %}
-
+<div class="gallery-container">
+    {% for item in paints %}
+    <div class="gallery-item">
+        <a href='{{ item.get_absolute_url }}'>
+            <img src={{ item.photo.url| watermark:"AMY"}} alt="{{ item.title }}" style="-moz-user-select: none; 
+                    -webkit-user-select: none;
+                    -ms-user-select: none;
+                    user-select: none;">
+        </a>
     </div>
-    </section>
+    {% endfor %}
+
+</div>
+</section>
 {% endblock %}

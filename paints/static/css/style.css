@@ -1,38 +1,50 @@
 @import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap');
 
-body{ box-sizing: border-box; text-align: center;
-font-family: "Avenir Next", Avenir, 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif; padding: 25px;
-}
-h3,p, ul{
-  padding: 0;
-  margin: 0;
-  
+body {
+  box-sizing: border-box;
+  text-align: center;
+  font-family: "Avenir Next", Avenir, 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
+  padding: 25px;
 }
 
-h3{
+h3,
+p,
+ul {
+  padding: 0;
+  margin: 0;
+
+}
+
+h3 {
   font-family: 'Balsamiq Sans', cursive;
   font-size: 2.5em;
-  text-align:center;
+  text-align: center;
   letter-spacing: 15px;
   color: #3bbdc7;
   padding-top: 25px;
   padding-bottom: 15px;
-  padding-left:10px;
+  padding-left: 10px;
 }
 
 
 .sun {
-   font-size: 25px;
-   animation: spin 7s cubic-bezier(.8, 0, .2, .8) infinite;
+  font-size: 25px;
+  animation: spin 7s cubic-bezier(.8, 0, .2, .8) infinite;
   transform: rotate(360deg);
   transform-origin: center center;
 }
+
 @keyframes spin {
-  50% { transform: rotate(180deg); }
-  100% { transform: rotate(360deg); }
+  50% {
+    transform: rotate(180deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
-.desc{
+.desc {
   padding: 25px 0px;
   background-color: #eee;
   letter-spacing: 0.1em;
@@ -40,11 +52,12 @@ h3{
 
 }
 
-nav{
+nav {
   width: 70%;
   display: block;
   margin: 0.5em auto;
 }
+
 nav ul {
   display: flex;
   list-style-type: none;
@@ -62,54 +75,57 @@ nav ul li a {
   letter-spacing: 1px;
 }
 
-nav ul li a:hover{
+nav ul li a:hover {
   font-weight: 500;
   letter-spacing: 3px;
   color: #e74b24;
 }
-a.active{
+
+a.active {
   color: #e74b24;
 }
 
 /*GALLERY*/
-.gallery-container{
+.gallery-container {
   padding-top: 25px;
-  display:flex; 
+  display: flex;
   flex-wrap: wrap;
   width: 100%;
   justify-content: center;
   position: relative;
 }
+
 .gallery-item {
   width: 300px;
   height: 300px;
   overflow: hidden;
-  position:relative;
-  display:flex;
-  justify-content:center;
-  align-items:center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 10px;
   transition: 200ms ease-in-out;
   border-radius: 10px;
 }
-.gallery-item:hover{
-/*    outline: 7px dotted #f9b618; */
-   opacity: 0.7;
+
+.gallery-item:hover {
+  /*    outline: 7px dotted #f9b618; */
+  opacity: 0.7;
 }
 
-.gallery-item img{ 
+.gallery-item img {
   object-fit: cover;
-   width: 300px;
-   height: 300px;
-   transition: 300ms ease-in-out;
+  width: 300px;
+  height: 300px;
+  transition: 300ms ease-in-out;
 }
 
-.gallery-item img:hover{
+.gallery-item img:hover {
   transform: scale(1.1);
   cursor: pointer;
 }
 
-.overlay{
+.overlay {
   opacity: 0;
   visibility: hidden;
   -webkit-transition: opacity 0.5s, visibility 0s 0.5s;
@@ -123,7 +139,7 @@ a.active{
   z-index: 2;
 }
 
-.modal{
+.modal {
   font-family: 'Balsamiq Sans', cursive;
   opacity: 0;
   visibility: hidden;
@@ -139,12 +155,13 @@ a.active{
   transition: 300ms ease-in-out;
   overflow: hidden;
 }
-.modal img{
+
+.modal img {
   height: 100%;
   transition: 150ms ease-in-out;
 }
 
-.close{
+.close {
   position: absolute;
   right: 25px;
   top: 25px;
@@ -152,16 +169,17 @@ a.active{
   background-color: transparent;
   color: #eea800;
   font-size: 3em;
-  
-  transform: scale(1.5,1);
+
+  transform: scale(1.5, 1);
   z-index: 5;
 }
 
-.next, .prev{
+.next,
+.prev {
   background-color: #eee;
   color: #2b2413;
   border-radius: 50%;
-  border:none;
+  border: none;
   height: 40px;
   width: 40px;
   position: absolute;
@@ -169,37 +187,42 @@ a.active{
   font-size: 25px;
 }
 
-.next:hover, .prev:hover{
+.next:hover,
+.prev:hover {
   filter: brightness(80%);
   cursor: pointer;
 }
 
-.prev{
+.prev {
   left: 25px;
   top: 50%;
 }
-.next{
+
+.next {
   right: 25px;
   top: 50%;
 }
 
-.close:hover{
+.close:hover {
   color: #50b7df;
   cursor: pointer;
 }
 
-.overlay.show, .modal.show{ 
+.overlay.show,
+.modal.show {
   opacity: 1;
-    visibility: visible;
-    -webkit-transition: opacity 0.5s;
-    transition: opacity 0.5s;
+  visibility: visible;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
 }
 
-.close:focus, .prev:focus, .next:focus{
+.close:focus,
+.prev:focus,
+.next:focus {
   outline: none;
 }
 
-footer{
+footer {
   padding: 25px 0px;
   background-color: #e7d424;
   margin-top: 50px;
@@ -208,7 +231,7 @@ footer{
   border-radius: 10px;
 }
 
-footer a{
+footer a {
   text-decoration: none;
-  color:white;
+  color: white;
 }

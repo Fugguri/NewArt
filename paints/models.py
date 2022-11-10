@@ -42,7 +42,7 @@ class Orientation(models.Model):
         return self.title
 
     class Meta:
-        verbose_name = "Ориентация "
+        verbose_name = "Ориентация"
         verbose_name_plural = "Ориентация"
 
 
