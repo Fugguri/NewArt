@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 {% load watermark %}
-{% block title %} {{ block.super }}|Gallery{% endblock %}
+{% block title %} {{ block.super }}|{{title}}{% endblock %}
 {% block context %}
 <div class="gallery-container">
     {% for item in paints %}
     <div class="gallery-item">
         <a href='{{ item.get_absolute_url }}'>
-            <img src={{ item.photo.url| watermark:"AMY"}} alt="{{ item.title }}" style="-moz-user-select: none; 
+            <img src={{ item.photo.url|watermark:"AMY, qiality="}} alt=" {{ item.title }}" style="-moz-user-select: none; 
                     -webkit-user-select: none;
                     -ms-user-select: none;
                     user-select: none;">
