@@ -159,7 +159,7 @@ a.active {
     overflow: hidden;
     position: relative;
     display: flex;
-    justify-content: center;
+
     align-items: center;
     margin: 8px;
     transition: 198ms ease-in-out;
@@ -288,9 +288,11 @@ footer {
     color: #423564;
     letter-spacing: -1px;
     border-radius: 8px;
+
 }
 
 footer a {
     text-decoration: none;
     color: #423564;
+
 }

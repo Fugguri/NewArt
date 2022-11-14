@@ -125,6 +125,20 @@ a.active {
   cursor: pointer;
 }
 
+.btn-gallery {
+  position: absolute;
+  top: 10%;
+  left: 93%;
+
+  color: rgba(204, 98, 98, 0.327);
+  font-size: 12px;
+
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+
+
 .overlay {
   opacity: 0;
   visibility: hidden;
@@ -229,6 +243,7 @@ footer {
   color: white;
   letter-spacing: 1px;
   border-radius: 10px;
+
 }
 
 footer a {

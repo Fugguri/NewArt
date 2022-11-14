@@ -6,6 +6,7 @@
     {% for item in paints %}
     <div class="gallery-item">
         <a href='{{ item.get_absolute_url }}'>
+            <button class="btn-gallery"><a href="{% url 'addbookmark' item.pk %}">&#128420;</a></button>
             <img src={{ item.photo.url|watermark:"AMY, qiality="}} alt=" {{ item.title }}" style="-moz-user-select: none; 
                     -webkit-user-select: none;
                     -ms-user-select: none;

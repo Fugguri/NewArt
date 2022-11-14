@@ -1,7 +1,7 @@
 from django.urls import path
 from .views import *
 from . import views
-
+from django.http import request
 
 urlpatterns = [
     path('', HomePaint.as_view(), name='gallery'),
@@ -15,6 +15,6 @@ urlpatterns = [
     path('about', About.as_view(), name='about_me'),
     path('in_interior', In_Interior.as_view(), name='in_interior'),
     path('addbookmark/<int:pk>',
-         Addbookmark.as_view(), name='addbookmark'),
+         views.addbokmarks, name='addbookmark'),
     path('bookmarks', BookmarksListView.as_view(), name="bookmarks")
 ]

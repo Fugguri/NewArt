@@ -73,8 +73,3 @@ class Paint(models.Model):
     class Meta:
         verbose_name = "Картину"
         verbose_name_plural = "Картины"
-
-
-class BookmarksModel(models.Model):
-    paint = models.ForeignKey(
-        Paint, verbose_name="Картина", on_delete=models.CASCADE)

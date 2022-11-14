@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Paint, Year, Collection, Material, Orientation, BookmarksModel
+from .models import Paint, Year, Collection, Material, Orientation
 
 
 class PaintAdmin(admin.ModelAdmin):
@@ -16,4 +16,3 @@ admin.site.register(Year)
 admin.site.register(Collection)
 admin.site.register(Material)
 admin.site.register(Orientation)
-admin.site.register(BookmarksModel)

@@ -1,8 +1,7 @@
 from django.shortcuts import redirect
-from .models import Paint, Collection, Year, Material, Orientation, BookmarksModel
+from .models import Paint, Collection, Year, Material, Orientation
 from django.views.generic import ListView, DetailView, CreateView, View
 from django.core.paginator import Paginator
-from django.http import HttpResponseRedirect
 
 
 class HomePaint(ListView):
@@ -78,18 +77,17 @@ class In_Interior(HomePaint):
     extra_context = {'title': 'В интерьере'}
 
 
-class Addbookmark(View):
-    def post(self, request, pk):
-        paint = Paint.objects.get(id=pk)
-        new_bookmark = BookmarksModel.objects.create(paint=paint)
-        session_bookmarks = request.session.get("bookmarks_id", [])
-        session_bookmarks.append(new_bookmark.id)
-        request.session['bookmarks_id'] = session_bookmarks
-        return redirect('/bookmarks')
+def addbokmarks(request, pk):
+    paint = Paint.objects.get(id=pk)
+    session_bookmarks = request.session.get("bookmarks_id", [])
+    session_bookmarks.append(paint.pk)
+    request.session['bookmarks_id'] = session_bookmarks
+
+    return redirect('bookmarks')
 
 
 class BookmarksListView(ListView):
-    model = BookmarksModel
+    model = Paint
     context_object_name = 'bookmarks'
     template_name = 'bookmarks/bookmarks.html'
 

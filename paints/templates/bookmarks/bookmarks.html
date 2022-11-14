@@ -1,7 +1,19 @@
 {% extends 'base.html' %}
-{% block title %} {{ block.super }}|{{ title }}{% endblock %}
+{% load watermark %}
+{% block title %} {{ block.super }}|{{title}}{% endblock %}
 {% block context %}
-{% for i in bookmarks %}
+<div class="gallery-container">
+    {% for item in bookmarks %}
+    <div class="gallery-item">
+        <a href='{{ item.get_absolute_url }}'>
+            <img src={{ item.photo.url|watermark:"AMY, qiality="}} alt=" {{ item.title }}" style="-moz-user-select: none; 
+                    -webkit-user-select: none;
+                    -ms-user-select: none;
+                    user-select: none;">
+        </a>
+    </div>
+    {% endfor %}
 
-{% endfor %}
+</div>
+</section>
 {% endblock %}

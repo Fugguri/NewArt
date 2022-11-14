@@ -171,8 +171,8 @@ body {
     position: relative;
     overflow: hidden;
     height: 100%;
-    float: right;
-    width: 45%;
+
+    width: 50%;
     display: inline-block;
 }
 
@@ -216,8 +216,6 @@ body {
 
 .product-image:hover img {
     transition: all 0.3s ease-out;
-}
+    transform: scale(0.5);
 
-.product-image:hover img {
-    transform: scale(1.2, 1.2);
 }

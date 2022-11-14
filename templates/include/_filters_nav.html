@@ -1,9 +1,12 @@
+{% load paint_tags %}
+
+
 <div class="dropdown">
     <button class="dropbtn">Dropdown</button>
     <div class="dropdown-content">
         <ul>
             <li><b>Коллекция</b></li>
-            {% for i in collections %}
+            {% for i in get_collections %}
             <li><a href="{%url 'collections' i.pk%}">{{i}}</li></a>
             {% endfor %}
             <li><b>Год</b></li>

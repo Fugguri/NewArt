@@ -13,7 +13,7 @@
             <a class="page-link" href="?page={{ p }}"><u>{{ p }}</u><span class="sr-inly"></span> </a>
         </li>
         {% elif p > page_obj.number|add:-3 and p < page_obj.number|add:3 %} <li class="page-item"><a class="page-link"
-                href="?page={{ p }}">{{ p }}</a> </li>
+                href="?page={{ p }}"> {{ p }} </a> </li>
             {% endif %}
             {% endfor %}
             {% if page_obj.has_next %}
