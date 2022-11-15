@@ -109,34 +109,33 @@ a.active {
 }
 
 .gallery-item:hover {
-  /*    outline: 7px dotted #f9b618; */
-  opacity: 0.7;
+  transform: scale(1.2);
 }
 
 .gallery-item img {
-  object-fit: cover;
+  object-fit: scale-down;
   width: 300px;
   height: 300px;
-  transition: 300ms ease-in-out;
+  border: none;
 }
 
 .gallery-item img:hover {
-
   cursor: pointer;
 }
 
 .btn-gallery {
   position: absolute;
-  top: 10%;
-  left: 93%;
-
+  top: 15%;
+  left: 90%;
   color: rgba(204, 98, 98, 0.327);
   font-size: 12px;
-
   cursor: pointer;
   border-radius: 5px;
+  border: none;
 }
-
+.btn-gallery a {
+color: #ffffff;
+}
 
 
 .overlay {
@@ -173,6 +172,7 @@ a.active {
 .modal img {
   height: 100%;
   transition: 150ms ease-in-out;
+  border-radius: 10px;
 }
 
 .close {
